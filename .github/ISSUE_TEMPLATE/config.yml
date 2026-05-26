@@ -1,8 +1,0 @@
-blank_issues_enabled: false
-contact_links:
-  - name: PicoClaw upstream issues
-    url: https://github.com/sipeed/picoclaw/issues
-    about: Bugs in PicoClaw itself (model selection, tool calls, channels) belong upstream.
-  - name: Security report
-    url: https://github.com/jaberio/PicoClaw-USB-Portable/security/advisories/new
-    about: Use a private security advisory for vulnerabilities in this wrapper.

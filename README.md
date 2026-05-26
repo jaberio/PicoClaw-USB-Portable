@@ -344,20 +344,41 @@ Sipeed. The PicoClaw name and trademarks belong to their respective owners.
 
 ---
 
+## 🔎 Verifying a release manually
+
+You can independently verify the pinned hash of any platform asset against
+the official Sipeed release before extraction:
+
+```powershell
+# Windows (PowerShell)
+$asset = 'picoclaw_Windows_x86_64.zip'
+$ver   = 'v0.2.8'
+Invoke-WebRequest -Uri "https://github.com/sipeed/picoclaw/releases/download/$ver/$asset" -OutFile $asset
+(Get-FileHash -Algorithm SHA256 -Path $asset).Hash.ToLower()
+```
+
+```bash
+# macOS / Linux
+asset=picoclaw_Linux_x86_64.tar.gz
+ver=v0.2.8
+curl -fL -o "$asset" "https://github.com/sipeed/picoclaw/releases/download/$ver/$asset"
+sha256sum "$asset"
+```
+
+The output should match the `SHA256_*` line for that platform in
+[`scripts/release.config`](scripts/release.config). Or run the bundled
+verifier across all 9 pinned platforms at once:
+
+```bash
+bash scripts/verify-manifest.sh
+```
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify-manifest.ps1
+```
+
+---
+
 ## 📜 License
 
-This wrapper is released under the [MIT License](LICENSE). The PicoClaw binary
-it downloads is also MIT-licensed by Sipeed; consult the
-[upstream LICENSE](https://github.com/sipeed/picoclaw/blob/main/LICENSE) for
-its terms.
-
-## 🔐 Security
-
-To report a vulnerability in this wrapper, see [SECURITY.md](SECURITY.md). For
-issues inside PicoClaw itself, report upstream at
-[sipeed/picoclaw](https://github.com/sipeed/picoclaw/security).
-
-## 🤝 Contributing
-
-PRs welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the development
-workflow, and [CHANGELOG.md](CHANGELOG.md) for the release history.
+[MIT](LICENSE). The PicoClaw binary it downloads is also MIT-licensed by Sipeed.

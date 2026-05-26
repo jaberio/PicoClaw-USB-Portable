@@ -1,20 +1,16 @@
 # PicoClaw Portable - keep user/runtime data out of git
 
-# User data (config, sessions, secrets, memory) - PRESERVE LOCALLY
+# User data (config, sessions, secrets, memory) - NEVER COMMIT
 data/
 
 # Downloaded binaries and cache
 .cache/
 
-# Pointer / status files written at runtime
+# Runtime status files
 *.flag
 *.log
 *.pid
 *.lock
-
-# Release packaging artifacts (built by CI)
-dist/
-*.zip.sha256
 
 # Editor / IDE
 .vscode/
@@ -27,6 +23,5 @@ dist/
 Thumbs.db
 desktop.ini
 
-# Backup artifacts produced by PicoClaw migrations
+# PicoClaw migration backups
 *.bak
-*.20*.bak
