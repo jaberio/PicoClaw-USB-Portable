@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# shellcheck disable=SC2034
 # ============================================================================
 # PicoClaw Agent - Portable Launcher (macOS / Linux)
 # ============================================================================
@@ -119,6 +120,10 @@ fi
 # ---------------------------------------------------------------------------
 # ANSI Colors (only emit when stdout is a terminal)
 # ---------------------------------------------------------------------------
+# Several palette entries below look "unused" to ShellCheck because the
+# current menus only use a subset. Keeping the full set means future menu
+# items can pick up colors without redeclaring the palette. SC2034 is
+# disabled file-wide near the top of the script for that reason.
 if [ -t 1 ]; then
     RESET=$'\033[0m'
     BOLD=$'\033[1m'
