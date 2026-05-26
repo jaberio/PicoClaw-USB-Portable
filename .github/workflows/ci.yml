@@ -22,7 +22,7 @@ jobs:
     name: Lint bash scripts
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: shellcheck
         run: |
           sudo apt-get update && sudo apt-get install -y shellcheck
@@ -38,7 +38,7 @@ jobs:
     name: Lint PowerShell scripts
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: PSScriptAnalyzer
         shell: pwsh
         run: |
@@ -67,7 +67,7 @@ jobs:
     name: Validate launch.bat
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: cmd /c launch.bat help (no-op smoke test)
         shell: cmd
         # We do not actually let setup run here because it would download a
@@ -81,6 +81,6 @@ jobs:
     name: Verify pinned SHA256 hashes
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Run manifest verifier
         run: bash scripts/verify-manifest.sh
