@@ -1,0 +1,12 @@
+# Force consistent line endings on every checkout.
+* text=auto eol=lf
+
+# Windows-only scripts must keep CRLF or cmd.exe will misparse them.
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+*.ps1   text eol=crlf
+
+# Treat archives as binary just in case anyone commits one.
+*.zip    binary
+*.tar.gz binary
+*.gz     binary
