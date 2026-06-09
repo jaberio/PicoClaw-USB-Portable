@@ -1,55 +1,28 @@
-theme: jekyll-theme-slate
+# GitHub Pages Jekyll Configuration
+# Theme: Use GitHub's built-in Slate theme
+remote_theme: pages-themes/slate@v0.2.0
+plugins:
+  - jekyll-remote-theme
 
-title: PicoClaw Portable Launcher - Documentation
-description: Ultra-efficient AI agent in a portable Go binary. Setup in 30 seconds, zero host pollution. Works on Windows, macOS, Linux.
-
-url: "https://jaberio.github.io/PicoClaw-USB-Portable"
+# Site metadata
+title: "PicoClaw Portable Launcher"
+description: "Ultra-efficient AI agent in a portable Go binary. Setup in 30 seconds, zero host pollution. Works on Windows, macOS, Linux."
+url: "https://jaberio.github.io"
 baseurl: "/PicoClaw-USB-Portable"
+repository: "jaberio/PicoClaw-USB-Portable"
 
-# GitHub Pages settings
-repository: jaberio/PicoClaw-USB-Portable
-
-# Site settings
-locale: "en-US"
-timezone: "UTC"
-
-# Navigation
-navigation:
-  - title: "Getting Started"
-    children:
-      - title: "Quick Start"
-        url: "/guides/quick-start/"
-      - title: "Configuration"
-        url: "/guides/configuration/"
-      - title: "Examples"
-        url: "/guides/examples/"
-  
-  - title: "Features"
-    children:
-      - title: "What's New"
-        url: "/guides/improvements/"
-      - title: "Troubleshooting"
-        url: "/guides/troubleshooting/"
-      - title: "Security"
-        url: "/guides/security/"
-  
-  - title: "Technical"
-    children:
-      - title: "Architecture"
-        url: "/technical/architecture/"
-      - title: "Refactoring"
-        url: "/technical/refactoring/"
-      - title: "Delivery"
-        url: "/technical/delivery/"
+# Author
+author:
+  name: "PicoClaw"
+  url: "https://github.com/jaberio/PicoClaw-USB-Portable"
 
 # Build settings
 markdown: kramdown
-plugins:
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
-  - jekyll-seo-tag
+kramdown:
+  input: GFM
+  hard_wrap: false
 
+# Exclude from build
 exclude:
   - .gitignore
   - .github
@@ -57,3 +30,12 @@ exclude:
   - data/
   - .env
   - vendor/
+  - "*.md.bak"
+
+# Defaults for pages
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
