@@ -26,6 +26,25 @@
 
 ---
 
+## 📖 Complete Documentation
+
+**➜ [View full documentation on GitHub Pages](https://jaberio.github.io/PicoClaw-USB-Portable/)**
+
+### Quick Links
+- **[🚀 Quick Start Guide](docs/guides/quick-start.md)** ← Start here (30 seconds to configured)
+- **[⚙️ Configuration Guide](docs/guides/configuration.md)** - API keys, models, providers
+- **[📖 User Guides](docs/guides/)** - Examples, troubleshooting, security best practices
+- **[🏗️ Architecture & Design](docs/technical/architecture.md)** - How it works, DRY principles
+- **[📋 Command Reference](docs/reference/commands.md)** - All CLI commands
+- **[🔌 Provider Reference](docs/reference/providers.md)** - All 7+ supported AI providers
+
+**Documentation** (~4,500+ lines across 16 files) is organized by:
+- **Guides** - User-focused docs (setup, configuration, examples, troubleshooting, security)
+- **Technical** - Developer-focused docs (architecture, refactoring, delivery)
+- **Reference** - Command, provider, and schema reference
+
+---
+
 ## ✨ Why this exists
 
 PicoClaw ships as a single static Go binary, which makes it ideal for true
@@ -38,6 +57,10 @@ bundle:
 - **SHA256-verified downloads.** The pinned release lives in `scripts/release.config`. Every download is checked against its expected hash before extraction.
 - **Idempotent setup.** Re-running the launcher only re-downloads when the binary is missing or the manifest version changed.
 - **OpenAI-compatible everywhere.** PicoClaw natively supports 30+ LLM providers and 19+ messaging channels through `data/config.json`.
+<<<<<<< HEAD
+=======
+- **✨ Easy configuration.** CLI flags for quick setup, no hardcoding, single source of truth for all settings.
+>>>>>>> ec7ec9b (feat: Migrate documentation to GitHub Pages)
 
 ---
 
