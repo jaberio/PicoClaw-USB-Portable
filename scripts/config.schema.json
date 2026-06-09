@@ -1,0 +1,87 @@
+{
+  "name": "picoclaw-config",
+  "version": "1.0",
+  "description": "PicoClaw configuration schema",
+  "defaults": {
+    "api_keys": {},
+    "default_agent": {
+      "provider": "openai",
+      "model_name": "gpt-4o",
+      "temperature": 0.7,
+      "max_tokens": 4096
+    },
+    "channels": {},
+    "skills": [],
+    "memory": {
+      "type": "sqlite",
+      "retention_days": 30
+    },
+    "gateway": {
+      "host": "127.0.0.1",
+      "port": 18790
+    }
+  },
+  "providers": {
+    "openai": {
+      "name": "OpenAI",
+      "keyPrefix": "sk-",
+      "defaultModels": ["gpt-4o", "gpt-4o-mini", "gpt-4-turbo"]
+    },
+    "anthropic": {
+      "name": "Anthropic",
+      "keyPrefix": "sk-ant-",
+      "defaultModels": ["claude-opus-4-1", "claude-3-5-sonnet", "claude-3-5-haiku"]
+    },
+    "deepseek": {
+      "name": "DeepSeek",
+      "keyPrefix": "sk-",
+      "defaultModels": ["deepseek-reasoner", "deepseek-chat"]
+    },
+    "groq": {
+      "name": "Groq",
+      "keyPrefix": "gsk_",
+      "defaultModels": ["mixtral-8x7b-32768", "llama2-70b-4096"]
+    },
+    "gemini": {
+      "name": "Google Gemini",
+      "keyPrefix": "AIza",
+      "defaultModels": ["gemini-2.0-flash", "gemini-1.5-pro"]
+    },
+    "huggingface": {
+      "name": "HuggingFace",
+      "keyPrefix": "hf_",
+      "defaultModels": ["meta-llama/Llama-2-70b"]
+    },
+    "ollama": {
+      "name": "Ollama (Local)",
+      "keyPrefix": "http://",
+      "defaultModels": ["llama2", "mistral", "neural-chat"]
+    }
+  },
+  "menu_items": {
+    "main": [
+      { "id": 1, "label": "Start PicoClaw chat", "hint": "interactive agent" },
+      { "id": 2, "label": "Onboard / Reconfigure", "hint": "API keys, channels" },
+      { "id": 3, "label": "Start gateway", "hint": "127.0.0.1:18790" },
+      { "id": 4, "label": "Configuration", "hint": "quick setup →" },
+      { "id": 5, "label": "Advanced options", "hint": "→" },
+      { "id": 6, "label": "Exit", "hint": "" }
+    ],
+    "configuration": [
+      { "id": 1, "label": "Initialize config", "hint": "create from template" },
+      { "id": 2, "label": "Set API key", "hint": "OpenAI, Claude, etc." },
+      { "id": 3, "label": "Set default model", "hint": "gpt-4o, claude-opus, etc." },
+      { "id": 4, "label": "View config", "hint": "display current settings" },
+      { "id": 5, "label": "Back to main menu", "hint": "" }
+    ],
+    "advanced": [
+      { "id": 1, "label": "Show status", "hint": "check provider/channels" },
+      { "id": 2, "label": "Switch model", "hint": "picoclaw model" },
+      { "id": 3, "label": "Edit config.json", "hint": "open in editor" },
+      { "id": 4, "label": "Update binary", "hint": "bump to manifest version" },
+      { "id": 5, "label": "List MCP servers", "hint": "picoclaw mcp list" },
+      { "id": 6, "label": "List skills", "hint": "picoclaw skills list" },
+      { "id": 7, "label": "Back to main menu", "hint": "" }
+    ]
+  }
+}

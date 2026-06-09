@@ -1,0 +1,59 @@
+theme: jekyll-theme-slate
+
+title: PicoClaw Portable Launcher - Documentation
+description: Ultra-efficient AI agent in a portable Go binary. Setup in 30 seconds, zero host pollution. Works on Windows, macOS, Linux.
+
+url: "https://jaberio.github.io/PicoClaw-USB-Portable"
+baseurl: "/PicoClaw-USB-Portable"
+
+# GitHub Pages settings
+repository: jaberio/PicoClaw-USB-Portable
+
+# Site settings
+locale: "en-US"
+timezone: "UTC"
+
+# Navigation
+navigation:
+  - title: "Getting Started"
+    children:
+      - title: "Quick Start"
+        url: "/guides/quick-start/"
+      - title: "Configuration"
+        url: "/guides/configuration/"
+      - title: "Examples"
+        url: "/guides/examples/"
+  
+  - title: "Features"
+    children:
+      - title: "What's New"
+        url: "/guides/improvements/"
+      - title: "Troubleshooting"
+        url: "/guides/troubleshooting/"
+      - title: "Security"
+        url: "/guides/security/"
+  
+  - title: "Technical"
+    children:
+      - title: "Architecture"
+        url: "/technical/architecture/"
+      - title: "Refactoring"
+        url: "/technical/refactoring/"
+      - title: "Delivery"
+        url: "/technical/delivery/"
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-seo-tag
+
+exclude:
+  - .gitignore
+  - .github
+  - scripts/
+  - data/
+  - .env
+  - vendor/
